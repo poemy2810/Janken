@@ -13,28 +13,72 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        choki.setOnClickListener {
 
-            player_hand.setImageResource(R.drawable.choki_me)
+        for (battle in 1..5) {
             val randomNum = Random().nextInt(3)
 
-            if (randomNum == 0) {
-                //相手の手がグーの時
-                cpu.setImageResource(R.drawable.gu_aite)
-                resultThisTime.text = "あなたのまけです"
+            choki.setOnClickListener {
 
-            }else if(randomNum == 1){
-                //相手の手がパーの時
-                cpu.setImageResource(R.drawable.pa_aite)
-                resultThisTime.text = "あなたのかちです"
-            }else{
-                //相手の手がチョキの時
-                cpu.setImageResource(R.drawable.choki_aite)
-                resultThisTime.text = "あいこ！"
+                player_hand.setImageResource(R.drawable.choki_me)
+
+                if (randomNum == 0) {
+                    //相手の手がグーの時
+                    cpu.setImageResource(R.drawable.gu_aite)
+                    resultThisTime.text = "まけ！！！！"
+
+                } else if (randomNum == 1) {
+                    //相手の手がパーの時
+                    cpu.setImageResource(R.drawable.pa_aite)
+                    resultThisTime.text = "あなたのかち！！"
+                } else {
+                    //相手の手がチョキの時
+                    cpu.setImageResource(R.drawable.choki_aite)
+                    resultThisTime.text = "あいこ！"
+                }
+
             }
 
 
+            gu.setOnClickListener {
 
+                player_hand.setImageResource(R.drawable.gu_me)
+
+                if (randomNum == 0) {
+                    //相手の手がグーの時
+                    cpu.setImageResource(R.drawable.gu_aite)
+                    resultThisTime.text = "あいこ！"
+
+                } else if (randomNum == 1) {
+                    //相手の手がパーの時
+                    cpu.setImageResource(R.drawable.pa_aite)
+                    resultThisTime.text = "まけ！！"
+                } else {
+                    //相手の手がチョキの時
+                    cpu.setImageResource(R.drawable.choki_aite)
+                    resultThisTime.text = "あなたのかち！！"
+                }
+            }
+
+
+            pa.setOnClickListener {
+
+                player_hand.setImageResource(R.drawable.pa_me)
+                if (randomNum == 0) {
+                    //相手の手がグーの時
+                    cpu.setImageResource(R.drawable.gu_aite)
+                    resultThisTime.text = "あいこ！"
+                    resultThisTime.textColors
+
+                } else if (randomNum == 1) {
+                    //相手の手がパーの時
+                    cpu.setImageResource(R.drawable.pa_aite)
+                    resultThisTime.text = "あなたのかち！！"
+                } else {
+                    //相手の手がチョキの時
+                    cpu.setImageResource(R.drawable.pa_aite)
+                    resultThisTime.text = "まけ！！"
+                }
+            }
 
 
         }
