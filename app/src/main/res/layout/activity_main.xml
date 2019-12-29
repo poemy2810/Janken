@@ -39,8 +39,8 @@
 
     <ImageView
         android:id="@+id/player_hand"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="320dp"
         android:layout_marginEnd="220dp"
@@ -106,7 +106,7 @@
         android:id="@+id/player"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="210dp"
+        android:layout_marginStart="270dp"
         android:layout_marginTop="430dp"
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="150dp"
@@ -120,20 +120,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/resultWin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="230dp"
         android:layout_marginTop="495dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="70dp"
-        android:text="3勝1敗1引き分け"
+        android:text="○勝"
         android:textColor="#574102"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487" />
 
     <TextView
         android:id="@+id/cpu_hp"
@@ -148,8 +150,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
 
     <TextView
         android:id="@+id/resultThisTime"
@@ -162,7 +166,95 @@
         android:textSize="40dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425" />
+
+    <TextView
+        android:id="@+id/battleTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginBottom="330dp"
+        android:text="○戦目"
+        android:textColor="#574102"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/resultLose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="425dp"
+        android:layout_marginEnd="50dp"
+        android:text="○敗"
+        android:textColor="#574102"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/resultWin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.504" />
+
+    <TextView
+        android:id="@+id/resultDraw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="30dp"
+        android:text="○引き分け"
+        android:textColor="#574102"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/resultLose"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_cpu"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="80dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="570dp"
+        android:background="#C1C2C4"
+        android:indeterminate="false"
+        android:progressBackgroundTint="#00C01313"
+        android:progressTint="#2196F3"
+        android:thickness="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cpu"
+        app:layout_constraintStart_toEndOf="@+id/cpu_hp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_player"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="80dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="8dp"
+        android:background="#CAC2C4"
+        android:indeterminate="false"
+        android:progressTint="#F44336"
+        android:thickness="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/resultLose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hp_player"
+        app:layout_constraintTop_toBottomOf="@+id/player" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
