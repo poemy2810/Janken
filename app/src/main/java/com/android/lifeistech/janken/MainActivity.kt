@@ -35,18 +35,21 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        battleTime.text = "$round 戦目"
-            //何戦目なのかを表示
+        while (win < 4 || lose < 4) {
+            val round = round +1
+            battleTime.text = "$round 戦目"
+            //何戦目なのか表示
 
-        val randomNum: Int = Random().nextInt(3)
+            val randomNum: Int = Random().nextInt(3)
             //ランダムな数を生成、コンピュータの出し手を決める
+
 
             //0:"グー"
             //1:"パー"
             //2:"チョキ"
-        choki.setOnClickListener {
+            choki.setOnClickListener {
 
-            player.setImageResource(R.drawable.choki_me)
+                player.setImageResource(R.drawable.choki_me)
 
                 if (randomNum == 0) {
                     //相手の手がグーの時
@@ -74,10 +77,10 @@ class MainActivity : AppCompatActivity() {
                     resultDraw.text = "$draw 引き分け"
                 }
 
-        }
+            }
 
 
-        gu.setOnClickListener {
+            gu.setOnClickListener {
 
                 player.setImageResource(R.drawable.gu_me)
 
@@ -104,10 +107,10 @@ class MainActivity : AppCompatActivity() {
                     resultWin.text = "$win 勝"
                     progressBar_cpu.progress = hpCpu - 1
                 }
-        }
+            }
 
 
-        pa.setOnClickListener {
+            pa.setOnClickListener {
 
                 player.setImageResource(R.drawable.pa_me)
                 if (randomNum == 0) {
@@ -134,17 +137,17 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-        }
+            }
 
 
-
-        /*
+            /*
         gu.setOnClickListener(listener)
         pa.setOnClickListener(listener)
         choki.setOnClickListener(listener)
 
         */
 
+        }
     }
 }
 /*
