@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-       // while (win < 4 || lose < 4) {
+        while (win < 5 && lose < 5) {
 
-           // var round = round ++
+            var round = round++
             battleTime.text = "$round 戦目"
             //何戦目なのか表示
 
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                     //相手の手がグーの時
                     cpu.setImageResource(R.drawable.gu_aite)
                     resultThisTime.text = "まけ！！！！"
-                    var lose = lose ++
+                    var lose = lose++
                     resultLose.text = "$lose 敗"
                     progressBar_player.progress = hpPlayer - 1
 
@@ -63,16 +63,16 @@ class MainActivity : AppCompatActivity() {
                     cpu.setImageResource(R.drawable.pa_aite)
                     resultThisTime.text = "あなたのかち！！"
 
-                    var win = win ++
+                    var win = win++
                     resultWin.text = "$win 勝"
-                    progressBar_cpu.progress = hpCpu -1
+                    progressBar_cpu.progress = hpCpu - 1
 
 
                 } else {
                     //相手の手がチョキの時
                     cpu.setImageResource(R.drawable.choki_aite)
                     resultThisTime.text = "あいこ！"
-                    var draw = draw ++
+                    var draw = draw++
                     resultDraw.text = "$draw 引き分け"
                 }
 
@@ -88,24 +88,24 @@ class MainActivity : AppCompatActivity() {
                     //相手の手がグーの時
                     cpu.setImageResource(R.drawable.gu_aite)
                     resultThisTime.text = "あいこ！"
-                    var draw = draw ++
+                    var draw = draw++
                     resultDraw.text = "$draw 引き分け"
 
                 } else if (randomNum == 1) {
                     //相手の手がパーの時
                     cpu.setImageResource(R.drawable.pa_aite)
                     resultThisTime.text = "まけ！！"
-                    var lose = lose ++
+                    var lose = lose++
                     resultLose.text = "$lose 敗"
-                    progressBar_player.progress = hpPlayer -1
+                    progressBar_player.progress = hpPlayer - 1
 
                 } else {
                     //相手の手がチョキの時
                     cpu.setImageResource(R.drawable.choki_aite)
                     resultThisTime.text = "あなたのかち！！"
-                    var win = win ++
+                    var win = win++
                     resultWin.text = "$win 勝"
-                    progressBar_cpu.progress = hpCpu -1
+                    progressBar_cpu.progress = hpCpu - 1
                 }
             }
 
@@ -118,39 +118,40 @@ class MainActivity : AppCompatActivity() {
                     //相手の手がグーの時
                     cpu.setImageResource(R.drawable.gu_aite)
                     resultThisTime.text = "あなたのかち！！"
-                    var win = win ++
+                    var win = win++
                     resultWin.text = "$win 勝"
-                    progressBar_cpu.progress = hpCpu -1
+                    progressBar_cpu.progress = hpCpu - 1
 
                 } else if (randomNum == 1) {
                     //相手の手がパーの時
                     cpu.setImageResource(R.drawable.pa_aite)
                     resultThisTime.text = "あいこ！！"
-                    var draw = draw ++
+                    var draw = draw++
                     resultDraw.text = "$draw 引き分け"
                 } else {
                     //相手の手がチョキの時
                     cpu.setImageResource(R.drawable.choki_aite)
                     resultThisTime.text = "まけ！！"
-                    var lose = lose ++
+                    var lose = lose++
                     resultLose.text = "$lose 敗"
-                    progressBar_player.progress = hpPlayer -1
+                    progressBar_player.progress = hpPlayer - 1
 
                 }
 
             }
+        }
 
 
-            /*
+        /*
         gu.setOnClickListener(listener)
         pa.setOnClickListener(listener)
         choki.setOnClickListener(listener)
 
         */
 
-        }
     }
-//}
+}
+
 /*
     val listener = object : View.OnClickListener {
         override fun onClick(v: View?) {
