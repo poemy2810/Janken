@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         while (win < 5 && lose < 5) {
 
-            var round = round++
+            //var round = round++
             battleTime.text = "$round 戦目"
             //何戦目なのか表示
 
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                     resultThisTime.text = "まけ！！！！"
                     var lose = lose++
                     resultLose.text = "$lose 敗"
-                    progressBar_player.progress = hpPlayer - 1
+                    progressBar_player.progress -= 1
 
                 } else if (randomNum == 1) {
                     //相手の手がパーの時
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
                     var win = win++
                     resultWin.text = "$win 勝"
-                    progressBar_cpu.progress = hpCpu - 1
+                    progressBar_cpu.progress -= 1
 
 
                 } else {
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                     resultThisTime.text = "まけ！！"
                     var lose = lose++
                     resultLose.text = "$lose 敗"
-                    progressBar_player.progress = hpPlayer - 1
+                    progressBar_player.progress -= 1
 
                 } else {
                     //相手の手がチョキの時
@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
                     resultThisTime.text = "あなたのかち！！"
                     var win = win++
                     resultWin.text = "$win 勝"
-                    progressBar_cpu.progress = hpCpu - 1
+                    progressBar_cpu.progress -= 1
                 }
             }
 
@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
                     resultThisTime.text = "あなたのかち！！"
                     var win = win++
                     resultWin.text = "$win 勝"
-                    progressBar_cpu.progress = hpCpu - 1
+                    progressBar_cpu.progress -= 1
 
                 } else if (randomNum == 1) {
                     //相手の手がパーの時
@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
                     resultThisTime.text = "まけ！！"
                     var lose = lose++
                     resultLose.text = "$lose 敗"
-                    progressBar_player.progress = hpPlayer - 1
+                    progressBar_player.progress -= 1
 
                 }
 
