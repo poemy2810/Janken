@@ -14,9 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        var hpPlayer = 5
-        var hpCpu = 5
-
         progressBar_player.max = 5
         progressBar_player.progress = 5
 
@@ -30,16 +27,10 @@ class MainActivity : AppCompatActivity() {
         var draw: Int = 1
         //勝ち数、負け数、引き分け数の初期値を設定
 
-        var round: Int = 0
-
-
+        var round: Int = 1
 
 
         while (win < 5 && lose < 5) {
-
-            //var round = round++
-            battleTime.text = "$round 戦目"
-            //何戦目なのか表示
 
 
             //0:"グー"
@@ -47,8 +38,12 @@ class MainActivity : AppCompatActivity() {
             //2:"チョキ"
             choki.setOnClickListener {
 
+
                 player.setImageResource(R.drawable.choki_me)
                 val randomNum: Int = Random().nextInt(3)
+                var round = round++
+                battleTime.text = "$round 戦目"
+                //何戦目なのか表示
 
                 if (randomNum == 0) {
                     //相手の手がグーの時
@@ -81,6 +76,9 @@ class MainActivity : AppCompatActivity() {
 
             gu.setOnClickListener {
 
+                var round = round++
+                battleTime.text = "$round 戦目"
+                //何戦目なのか表示
                 player.setImageResource(R.drawable.gu_me)
                 val randomNum: Int = Random().nextInt(3)
 
@@ -112,6 +110,9 @@ class MainActivity : AppCompatActivity() {
 
             pa.setOnClickListener {
 
+                var round = round++
+                battleTime.text = "$round 戦目"
+                //何戦目なのか表示
                 player.setImageResource(R.drawable.pa_me)
                 val randomNum: Int = Random().nextInt(3)
                 if (randomNum == 0) {
@@ -139,16 +140,16 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-        }
 
 
-        /*
+            /*
         gu.setOnClickListener(listener)
         pa.setOnClickListener(listener)
         choki.setOnClickListener(listener)
 
         */
 
+        }
     }
 }
 
