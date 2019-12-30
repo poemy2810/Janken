@@ -18,30 +18,28 @@ class MainActivity : AppCompatActivity() {
         var hpCpu = 5
 
         progressBar_player.max = 5
-        progressBar_player.progress = hpPlayer
+        progressBar_player.progress = 5
 
         progressBar_cpu.max = 5
-        progressBar_cpu.progress = hpCpu
+        progressBar_cpu.progress = 5
         //Player,CPUのHPを設定
 
 
-        val win: Int = 0
-        val lose: Int = 0
-        val draw: Int = 0
+        var win: Int = 1
+        var lose: Int = 1
+        var draw: Int = 1
         //勝ち数、負け数、引き分け数の初期値を設定
 
-        val round: Int = 0
+        var round: Int = 0
 
 
 
 
-        while (win < 4 || lose < 4) {
-            val round = round +1
+       // while (win < 4 || lose < 4) {
+
+           // var round = round ++
             battleTime.text = "$round 戦目"
             //何戦目なのか表示
-
-            val randomNum: Int = Random().nextInt(3)
-            //ランダムな数を生成、コンピュータの出し手を決める
 
 
             //0:"グー"
@@ -50,12 +48,13 @@ class MainActivity : AppCompatActivity() {
             choki.setOnClickListener {
 
                 player.setImageResource(R.drawable.choki_me)
+                val randomNum: Int = Random().nextInt(3)
 
                 if (randomNum == 0) {
                     //相手の手がグーの時
                     cpu.setImageResource(R.drawable.gu_aite)
                     resultThisTime.text = "まけ！！！！"
-                    val lose = lose + 1
+                    var lose = lose ++
                     resultLose.text = "$lose 敗"
                     progressBar_player.progress = hpPlayer - 1
 
@@ -64,16 +63,16 @@ class MainActivity : AppCompatActivity() {
                     cpu.setImageResource(R.drawable.pa_aite)
                     resultThisTime.text = "あなたのかち！！"
 
-                    val win = win + 1
+                    var win = win ++
                     resultWin.text = "$win 勝"
-                    progressBar_cpu.progress = hpCpu - 1
+                    progressBar_cpu.progress = hpCpu -1
 
 
                 } else {
                     //相手の手がチョキの時
                     cpu.setImageResource(R.drawable.choki_aite)
                     resultThisTime.text = "あいこ！"
-                    val draw = draw + 1
+                    var draw = draw ++
                     resultDraw.text = "$draw 引き分け"
                 }
 
@@ -83,29 +82,30 @@ class MainActivity : AppCompatActivity() {
             gu.setOnClickListener {
 
                 player.setImageResource(R.drawable.gu_me)
+                val randomNum: Int = Random().nextInt(3)
 
                 if (randomNum == 0) {
                     //相手の手がグーの時
                     cpu.setImageResource(R.drawable.gu_aite)
                     resultThisTime.text = "あいこ！"
-                    val draw = draw + 1
+                    var draw = draw ++
                     resultDraw.text = "$draw 引き分け"
 
                 } else if (randomNum == 1) {
                     //相手の手がパーの時
                     cpu.setImageResource(R.drawable.pa_aite)
                     resultThisTime.text = "まけ！！"
-                    val lose = lose + 1
+                    var lose = lose ++
                     resultLose.text = "$lose 敗"
-                    progressBar_player.progress = hpPlayer - 1
+                    progressBar_player.progress = hpPlayer -1
 
                 } else {
                     //相手の手がチョキの時
                     cpu.setImageResource(R.drawable.choki_aite)
                     resultThisTime.text = "あなたのかち！！"
-                    val win = win + 1
+                    var win = win ++
                     resultWin.text = "$win 勝"
-                    progressBar_cpu.progress = hpCpu - 1
+                    progressBar_cpu.progress = hpCpu -1
                 }
             }
 
@@ -113,27 +113,28 @@ class MainActivity : AppCompatActivity() {
             pa.setOnClickListener {
 
                 player.setImageResource(R.drawable.pa_me)
+                val randomNum: Int = Random().nextInt(3)
                 if (randomNum == 0) {
                     //相手の手がグーの時
                     cpu.setImageResource(R.drawable.gu_aite)
                     resultThisTime.text = "あなたのかち！！"
-                    val win = win + 1
+                    var win = win ++
                     resultWin.text = "$win 勝"
-                    progressBar_cpu.progress = hpCpu - 1
+                    progressBar_cpu.progress = hpCpu -1
 
                 } else if (randomNum == 1) {
                     //相手の手がパーの時
                     cpu.setImageResource(R.drawable.pa_aite)
                     resultThisTime.text = "あいこ！！"
-                    val draw = draw + 1
+                    var draw = draw ++
                     resultDraw.text = "$draw 引き分け"
                 } else {
                     //相手の手がチョキの時
                     cpu.setImageResource(R.drawable.choki_aite)
                     resultThisTime.text = "まけ！！"
-                    val lose = lose + 1
+                    var lose = lose ++
                     resultLose.text = "$lose 敗"
-                    progressBar_player.progress = hpPlayer - 1
+                    progressBar_player.progress = hpPlayer -1
 
                 }
 
@@ -149,7 +150,7 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
-}
+//}
 /*
     val listener = object : View.OnClickListener {
         override fun onClick(v: View?) {
